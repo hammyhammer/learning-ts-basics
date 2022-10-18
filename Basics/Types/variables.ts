@@ -14,10 +14,18 @@ string = 9
 // Will not work.
 
 // We can use the Any type to work around this. But it defeats the purpose of TS
+// I am getting an error saying that : is a unpected token though.. 
+// let whatever: any = "test"
+// whatever = 1
+// console.log(whatever)
 
-let whatever: any = "test"
-whatever = 1
-console.log(whatever)
+// Or you can just not give a variable a set value. 
+let anything;
+
+anything = 'string'
+anything = 9
+
+console.log(anything)
 
 
 
