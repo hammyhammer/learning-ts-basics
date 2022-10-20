@@ -16,9 +16,39 @@ function randomCoordinate(): { x: number, y: number } {
 }
 
 // The Example below will throw an error because on line 3, we do not declare age in the initially.
-printName({ first: "Potato", last: "head", age: 40 })
+// printName({ first: "Potato", last: "head", age: 40 })
 
 // However if make a new variable, even with keys that printName does not have, it does not throw errors.
 // As long we have the properties that are defined, TS doesnt care about excess properties 
 let toy = { first: 'potato', last: 'head', age: 40 }
 printName(toy)
+
+// Type Aliases
+// Here, we are creating a reference to what we can use later
+type Point = {
+  x: number;
+  y: number
+};
+
+let coordinateDos: { x: number, y: number } = { x: 34, y: 2 };
+
+// So instead of this... we can change it too... 
+function randomCoordinateDos(): { x: number, y: number } {
+  return { x: Math.random(), y: Math.random() }
+}
+
+// This. The return type is more concise. 
+function randomCoordinateTres(): Point {
+  return { x: Math.random(), y: Math.random() }
+}
+
+
+// Or change this to....
+function doublePoint(point: { x: number, y: number }): { x: number, y: number } {
+  return { x: point.x * 2, y: point.y * 2 }
+}
+
+// This. We are just using the type Point to make our code more clean
+function doublePointDos(point: Point): Point {
+  return { x: point.x * 2, y: point.y * 2 }
+}
