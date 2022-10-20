@@ -93,3 +93,17 @@ type Coordinates = {
   y: number;
   z?: number;
 };
+
+// Readonly Modifier
+// Basically you cannot reassign whatever readonly is assoicated with. We cannot change user id to a different
+// value
+type User = {
+  readonly id: number;
+  username: string;
+
+}
+
+const user: User = {
+  id: 1324,
+  username: 'propaneluver'
+}
