@@ -52,6 +52,13 @@ let colors = ['red', 'blue', 'yellow'];
 colors.map(color => {
   return color.toUpperCase()
 })
+
+// VOID is usually used for functions. Not variables. Basically to not return anything at all. No value
+// will be returned
+function printTwice(message: string): void {
+  console.log(message)
+}
+
 console.log(colors)
 
 
