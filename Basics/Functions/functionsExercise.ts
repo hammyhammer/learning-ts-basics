@@ -26,3 +26,27 @@ console.log(twoFer('Johnny'))
 //    return 'One for you, one for me'
 //  }
 // }
+
+
+// Wrtie a isLeapyear() function that accepts a year and returns true or
+// false depending on if the year is a leap year
+// isLeapyear(2012) => True
+// isLeapyear(2015) => false
+
+// Without annotations
+function isLeapyear(year) {
+  if (year % 4 === 0 && year % 100 !== 0) {
+    return true
+  }
+  return false
+}
+
+// With annotations
+// function isLeapyear(year: number): boolean {
+//   if (year % 4 === 0 && year % 100 !== 0) {
+//     return true
+//   }
+//   return false
+// }
+
+console.log(isLeapyear(1016))
