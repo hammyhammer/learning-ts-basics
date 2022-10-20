@@ -45,3 +45,6 @@ const cats: Movie = {
 function getProfit(movie: Movie): number {
   return movie.boxOffice.grossWorldwide - movie.boxOffice.budget
 }
+
+console.log(getProfit(dune))
+console.log(getProfit(cats))
