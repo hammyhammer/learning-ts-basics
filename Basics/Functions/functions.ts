@@ -22,6 +22,29 @@ const person = (person, age, isFunny) => {
 //   return person + age + isFunny
 // }
 
+// To add a value to an agrument with an annotation
+function greetAgain(person: string = 'Anakin') {
+  return `Hi there, ${person}`
+}
+
+// TS can infer the type of a return. But we can declare it to be explicit 
+function squareAgain(num: number): number {
+  return num * num
+}
+
+// We could return whatever type. TS is able to detect what we could be looking for.. 
+// such as a string on line 39 or number on line 41)
+function random(num: number) {
+  if (Math.random() < 0.5) {
+    return num.toString();
+  }
+  return num
+}
+
+// Arrow function example
+const add = (x: number, y: number): number => {
+  return x + y
+}
 
 
 
