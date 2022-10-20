@@ -1,5 +1,18 @@
 // Write the Movie type alias to make the following two variables properly typed
 // Make sure that "originalTitle" is optional and "title" is readonly
+
+type Movie = {
+  readonly title: string;
+  originalTitle?: string;
+  director: string;
+  releaseYear: Number;
+  boxOffice: {
+    budget: number;
+    grossUS: number;
+    grossWorldwide: number;
+  }
+}
+
 const dune: Movie = {
   title: "Dune",
   originalTitle: "Dune Part One",

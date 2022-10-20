@@ -124,3 +124,17 @@ const happyFace: ColorfulCircle = {
   radius: 4,
   color: 'yellow'
 }
+
+
+// We can do a extra properties by adding them inside a intersection type. Line 139.
+type Cat = {
+  numLives: number
+}
+
+type Dog = {
+  breed: string
+}
+
+type CatDog = Cat & Dog & {
+  age: number;
+}
