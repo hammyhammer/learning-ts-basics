@@ -84,3 +84,12 @@ const mySong: Song = {
 
 const earnings = calculatePayout(mySong)
 printSong(mySong)
+
+
+// Optional Properties
+// With the ? next to the z, it is telling TS that this property is not needed, it is optional
+type Coordinates = {
+  x: number;
+  y: number;
+  z?: number;
+};
