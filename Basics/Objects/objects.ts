@@ -52,3 +52,35 @@ function doublePoint(point: { x: number, y: number }): { x: number, y: number } 
 function doublePointDos(point: Point): Point {
   return { x: point.x * 2, y: point.y * 2 }
 }
+
+// Nest Objects
+// We can do a type alias to make everyone more cleaner. 
+type Song = {
+  title: string,
+  artist: string,
+  numStreams: number,
+  credits: { producer: string, writer: string }
+}
+
+// We can utilize different properties of our song type
+function calculatePayout(song: Song): number {
+  return song.numStreams * 0.0033
+}
+
+// We can utilize different properties of our song type
+function printSong(song: Song): void {
+  console.log(`${song.title} - ${song.artist}`)
+}
+
+const mySong: Song = {
+  title: "Unchained Melody",
+  artist: 'Righteous Brothers',
+  numStreams: 1235444,
+  credits: {
+    producer: "Phil Spector",
+    writer: "Alex North"
+  }
+}
+
+const earnings = calculatePayout(mySong)
+printSong(mySong)
