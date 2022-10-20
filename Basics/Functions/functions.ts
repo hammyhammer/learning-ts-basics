@@ -54,10 +54,27 @@ colors.map(color => {
 })
 
 // VOID is usually used for functions. Not variables. Basically to not return anything at all. No value
-// will be returned
+// will be returned. If a function does not have a return, it will spit out void.
+
+// Void returns undefined or null. So it still returns a type of value.
 function printTwice(message: string): void {
   console.log(message)
 }
+
+// Never type. Never will return absolutely nothing. It returns an error
+function makeError(message: string): never {
+  throw new Error(message)
+}
+
+//The function below will *never* return anything. It will throw an error
+function gameLoop(): never {
+  while (true) {
+    console.log('Game Loop Running')
+  }
+}
+
+
+
 
 console.log(colors)
 
