@@ -46,6 +46,13 @@ const add = (x: number, y: number): number => {
   return x + y
 }
 
+// Mapping for arrays. In this case, we do not have to decalre what type color would be in the map. TS knows 
+// from the content within the colors array
+let colors = ['red', 'blue', 'yellow'];
+colors.map(color => {
+  return color.toUpperCase()
+})
+console.log(colors)
 
 
 console.log(person('Bob', 3, true))
