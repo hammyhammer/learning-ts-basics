@@ -24,7 +24,12 @@ type SkillLevel = "Beginner" | "Intermediate" | "Advanced" | "Expert"
 // age must be a number
 // sport must be "ski" or "snowboard"
 // level must be a value from the SkillLevel type (from above)
-
+type SkiSchoolStudent = {
+  name: string,
+  age: number,
+  sport: "Ski" | "Snowboard",
+  level: SkillLevel
+}
 // **********************************************
 // ******************* PART 5 *******************
 // **********************************************
@@ -32,16 +37,34 @@ type SkillLevel = "Beginner" | "Intermediate" | "Advanced" | "Expert"
 // r should be a number
 // g should be a number
 // b should be a number
-
+type RGB = {
+  r: number,
+  g: number,
+  b: number
+}
 // Define a type to represent an HSL color
 // h should be a number
 // s should be a number
 // l should be a number
-
+type HSL = {
+  h: number,
+  s: number,
+  l: number
+}
 // Create an array called colors that can hold a mixture of RGB and HSL color types
-
+let colors: (RGB | HSL)[] = []
 // **********************************************
 // ******************* PART 6 *******************
 // **********************************************
 // Write a function called greet that accepts a single string OR an array of strings
 // It should print "Hello, <name>" for that single person OR greet each person in the array with the same format
+
+let greet = (person: string | string[]): void => {
+  if (typeof person === "string") {
+    console.log(`Hello ${person}`)
+  } else {
+    for (let indivdual of person) {
+      console.log(`Hello, "${indivdual}`)
+    }
+  }
+}
