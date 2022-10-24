@@ -46,3 +46,17 @@ const stuff: (number | string)[] = [1, 2, "string", " "]
 const coords: (Point | Loc)[] = []
 coords.push({ lat: 321.2, long: 123.2 })
 coords.push({ x: 123, y: 2 })
+
+// Literal Types
+
+// Literal types are immutable. 
+let zero: 0 = 0
+
+// We can use union types to give us options. But just for what we explicity say.
+let mood: "Happy" | "Sad" = "Happy";
+mood = "Sad"
+
+type DayOfWeekend = "Friday" | "Saturday" | "Sunday"
+
+//This wouldn't work because Wednesday does not exist in DayOfWeekend
+// let today: DayOfWeekend = 'Wednesday'
