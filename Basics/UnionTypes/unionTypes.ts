@@ -28,7 +28,8 @@ function test(test: number | string): void {
   console.log(test)
 }
 
-// Will complain if we have multiple types for the price. We can work around it with conditions
+// Will complain if we have multiple types for the price. We can work around it with conditions.
+// This is an example of type narrowing. Using conditionals to break it down. 
 function calculateax(price: number | string, tax: number) {
   if (typeof price === "string") {
     price = price.replace("$", "")
@@ -36,3 +37,12 @@ function calculateax(price: number | string, tax: number) {
   }
   return price * tax
 }
+
+// Arrays with union types
+// Use parameters to have types and the square bracket after. 
+const stuff: (number | string)[] = [1, 2, "string", " "]
+
+// We can also utilize custom types in this fashion
+const coords: (Point | Loc)[] = []
+coords.push({ lat: 321.2, long: 123.2 })
+coords.push({ x: 123, y: 2 })
