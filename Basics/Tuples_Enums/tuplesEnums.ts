@@ -17,3 +17,6 @@ const goodRes: HTTPResponse = [200, "OK"]
 goodRes.push('Error')
 
 // Tuples are situational. You won't use them all the time. But objects are seen as a better option. 
+
+// We can do nested arrays with tuples as well
+const responses: HTTPResponse[] = [[404, "Not Found"], [200, 'OK']]
