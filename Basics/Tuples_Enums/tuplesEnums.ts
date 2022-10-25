@@ -20,3 +20,34 @@ goodRes.push('Error')
 
 // We can do nested arrays with tuples as well
 const responses: HTTPResponse[] = [[404, "Not Found"], [200, 'OK']]
+
+
+// Enums are also unique in TS. They do not exist in JS.
+// Enums allow us to define a set of named constants. Something we can reference again and again.
+
+// By default, they are assigned by their index.
+enum OrderStatus {
+  PENDING,
+  SHIPPED,
+  DELIVERED,
+  RETURNED,
+}
+
+const myStatus = OrderStatus.DELIVERED
+
+function isDelivered(status: OrderStatus) {
+  return status === OrderStatus.DELIVERED
+}
+
+isDelivered(OrderStatus.RETURNED)
+
+//Enum of Strings
+
+enum ArrowKeys {
+  UP = 'up',
+  DOWN = 'down',
+  LEFT = 'left',
+  RIGHT = 'right'
+}
+
+// Enums can be either numbers or strings. They do not have to be of one type
