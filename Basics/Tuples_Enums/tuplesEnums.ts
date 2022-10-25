@@ -24,6 +24,7 @@ const responses: HTTPResponse[] = [[404, "Not Found"], [200, 'OK']]
 
 // Enums are also unique in TS. They do not exist in JS.
 // Enums allow us to define a set of named constants. Something we can reference again and again.
+// Enums are not used very widely, but it is good to know them 
 
 // By default, they are assigned by their index.
 enum OrderStatus {
@@ -51,3 +52,6 @@ enum ArrowKeys {
 }
 
 // Enums can be either numbers or strings. They do not have to be of one type
+// Behind the scenes, JS turns Enums into an object. 
+
+// If we put a const infront of our enum, it cleans up the JS version file. 
