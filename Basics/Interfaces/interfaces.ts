@@ -34,3 +34,19 @@ const thomas: Person = {
     return "Hello!";
   }
 }
+
+interface Product {
+  name: string,
+  price: number,
+  applyDiscount(discount: number): number
+}
+
+const shoes: Product = {
+  name: "Blue Shoes",
+  price: 100,
+  applyDiscount(amount: number) {
+    let newPrice = this.price * (1 - amount)
+    this.price = newPrice
+    return this.price
+  }
+}
