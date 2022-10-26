@@ -8,3 +8,7 @@
 
 // We can organize our JS files into dist. But we need to go into the json to select the folder we want to put it in
 // outDir is what will we look for  
+
+// target in JSON is the type of JS that will be compiled. 
+
+// Strict in json checks for errors. It can be situational, it is better to leave as true. 
