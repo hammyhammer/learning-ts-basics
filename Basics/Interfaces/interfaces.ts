@@ -14,12 +14,23 @@ interface Point2 {
 
 const pt: Point = { x: 123, y: 321 };
 
-// With the ?, it is an optional key. readonly is something we cannot change after we make a person
+// With the ?, it is an optional key. readonly is something we cannot change after we make a person.
+
+// We can also throw in methods in our interfaces. 
 interface Person {
   readonly id: number
   first: string,
   last: string,
-  nickname?: string
+  nickname?: string,
+  sayHi: () => string,
 }
 
-const thomas: Person = { first: "Thomas", last: "Hardy", nickname: "Tom", id: 123 }
+const thomas: Person = {
+  first: "Thomas",
+  last: "Hardy",
+  nickname: "Tom",
+  id: 123,
+  sayHi: () => {
+    return "Hello!";
+  }
+}
