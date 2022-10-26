@@ -50,3 +50,24 @@ const shoes: Product = {
     return this.price
   }
 }
+
+// We can add more properties to an interface. By making the same interface twice
+
+interface Dog {
+  name: string,
+  age: number
+}
+
+interface Dog {
+  breed: string,
+  bark(): string
+}
+
+const elton: Dog = {
+  name: "Elton",
+  age: 0.5,
+  breed: "Shepherd",
+  bark() {
+    return "Woof"
+  }
+}
