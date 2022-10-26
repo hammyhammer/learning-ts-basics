@@ -111,3 +111,10 @@ const bob: Engineer = {
   level: 'Junior',
   languages: ['JS', "TS", "Ruby"]
 }
+
+
+// Difference between types and interfaces
+// 1) Interfaces can only decribe shapes of objects.
+// 2) You cannot reopen types. You cannot add things to types, you do it within the same intitial occurance of
+//    the original type
+// 3) Interfaces can use extends. Types can but use & signs
