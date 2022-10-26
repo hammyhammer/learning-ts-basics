@@ -71,3 +71,43 @@ const elton: Dog = {
     return "Woof"
   }
 }
+
+// We can extend or inherent another Interface.
+
+interface ServiceDog extends Dog {
+  job: "Drug dog" | "Bomb" | "guide dog"
+}
+
+const chwey: ServiceDog = {
+  name: "Chewy",
+  age: 4.5,
+  breed: "Lab",
+  bark() {
+    return "Bark"
+  },
+  job: "guide dog"
+}
+
+// Multiple Inheritance
+
+interface Human {
+  name: string
+}
+
+interface Employee {
+  readonly id: number,
+  email: string
+}
+
+interface Engineer extends Human, Employee {
+  level: string,
+  languages: string[]
+}
+
+const bob: Engineer = {
+  name: 'Bob',
+  id: 123,
+  email: "bob@aol.com",
+  level: 'Junior',
+  languages: ['JS', "TS", "Ruby"]
+}
