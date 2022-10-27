@@ -16,3 +16,6 @@ This folder and the content it has will have the quick setup process steps.
   - npm install lite-server
   - in the scripts on package.json. we can make a "start: "lite-server"
   - npm start
+
+
+DOM Resources and Things I Thought Important
