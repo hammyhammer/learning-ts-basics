@@ -9,5 +9,10 @@ This folder and the content it has will have the quick setup process steps.
   - We can do a ! to get the boilerplate.
   - Add a title to whatever we want to call it
   - add a srcirpt tag to the body
-    * <script src= "dist"><script>
+    * <script src= "dist/index.js"><script>
 
+7) In order to do a live server, we can do npm start. I didn't do this method but just for reference just in case
+  - npm init -y (Makes package.json. Make sure the name in package.json is all lowercase)
+  - npm install lite-server
+  - in the scripts on package.json. we can make a "start: "lite-server"
+  - npm start
