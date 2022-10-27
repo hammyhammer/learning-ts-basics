@@ -1,3 +1,3 @@
 "use strict";
-console.log("Hello, this is a test");
-console.log("Second test");
+const btn = document.getElementById("btn");
+console.log(btn);

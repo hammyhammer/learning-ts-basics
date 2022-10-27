@@ -19,3 +19,6 @@ This folder and the content it has will have the quick setup process steps.
 
 
 DOM Resources and Things I Thought Important
+1) If you comment back in lib in tsconfig, it esssentailly removes all dpendenies that TS has.
+  - It is a good idea to do that if you are doing Node in the backend and do not want TS to mess up something
+  - You can almost just select what libraries you do want.
