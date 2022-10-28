@@ -46,6 +46,8 @@ function createTodo(todo: Todo) {
   const newLI = document.createElement("li")
   const checkbox = document.createElement("input")
   checkbox.type = "checkbox"
+  checkbox.checked = todo.completed
+
   checkbox.addEventListener("change", function () {
     todo.completed = checkbox.checked
     saveTodos()
