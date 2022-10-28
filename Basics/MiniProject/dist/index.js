@@ -4,17 +4,21 @@
 const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
+const list = document.getElementById("todolist");
 function handleSubmit(event) {
     event === null || event === void 0 ? void 0 : event.preventDefault();
-    console.log('submitted');
+    const newTodoText = input.value;
+    const newLI = document.createElement("LI");
+    newLI.append(newTodoText);
+    list === null || list === void 0 ? void 0 : list.append(newLI);
 }
 form.addEventListener("submit", handleSubmit);
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 
-btn.addEventListener("click", function () {
-    alert(input.value);
-    input.value = "";
-});
+// btn.addEventListener("click", function () {
+//   alert(input.value)
+//   input.value = ""
+// });
 // Type assertion.
 // If for whatever reason we want to force a type onto a variable we can do the following:
 // Unknown is a type, it wont think itself as a string, number, etc

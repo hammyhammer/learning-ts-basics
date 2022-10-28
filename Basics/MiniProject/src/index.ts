@@ -4,19 +4,24 @@
 const btn = document.getElementById("btn")! as HTMLButtonElement
 const input = document.getElementById("todoinput")! as HTMLInputElement
 const form = document.querySelector("form")!
+const list = document.getElementById("todolist")!
 
 function handleSubmit(event: SubmitEvent) {
   event?.preventDefault()
-  console.log('submitted')
+  const newTodoText = input.value
+  const newLI = document.createElement("LI")
+  newLI.append(newTodoText)
+  list?.append(newLI)
 }
 form.addEventListener("submit", handleSubmit)
 
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 
-btn.addEventListener("click", function () {
-  alert(input.value)
-  input.value = ""
-});
+
+// btn.addEventListener("click", function () {
+//   alert(input.value)
+//   input.value = ""
+// });
 
 
 // Type assertion.
