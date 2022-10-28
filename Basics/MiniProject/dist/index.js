@@ -5,16 +5,25 @@ const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
 const list = document.getElementById("todolist");
+const todos = [];
 function handleSubmit(event) {
     event === null || event === void 0 ? void 0 : event.preventDefault();
-    const newTodoText = input.value;
+    const newTodo = {
+        text: input.value,
+        completed: false
+    };
+    createTodo(newTodo);
+    todos.push(newTodo);
+    input.value = "";
+}
+function createTodo(todo) {
     const newLI = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    newLI.append(newTodoText);
+    newLI.append(todo.text);
     newLI.append(checkbox);
     list === null || list === void 0 ? void 0 : list.append(newLI);
-    input.value = "";
+    console.log(todos);
 }
 form.addEventListener("submit", handleSubmit);
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control

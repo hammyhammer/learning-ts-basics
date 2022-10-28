@@ -6,19 +6,38 @@ const input = document.getElementById("todoinput")! as HTMLInputElement
 const form = document.querySelector("form")!
 const list = document.getElementById("todolist")!
 
+// Interface example we could use
+
+interface Todo {
+  text: string;
+  completed: boolean;
+}
+const todos: Todo[] = []
+
 function handleSubmit(event: SubmitEvent) {
   event?.preventDefault()
-  const newTodoText = input.value
+  const newTodo: Todo = {
+    text: input.value,
+    completed: false
+  }
+  createTodo(newTodo)
+  todos.push(newTodo)
+
+  input.value = ""
+}
+
+function createTodo(todo: Todo) {
   const newLI = document.createElement("li")
   const checkbox = document.createElement("input")
   checkbox.type = "checkbox"
-  newLI.append(newTodoText)
+  newLI.append(todo.text)
   newLI.append(checkbox)
   list?.append(newLI)
-  input.value = ""
-}
-form.addEventListener("submit", handleSubmit)
+  console.log(todos)
 
+}
+
+form.addEventListener("submit", handleSubmit)
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 
 
