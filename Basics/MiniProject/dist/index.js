@@ -1,10 +1,13 @@
 "use strict";
 // The ! at the end is telling TS to stop worrying, it is not null. 
+// We can assert types with the DOM to be explicit and not hav eTS to worry
 const btn = document.getElementById("btn");
+const input = document.getElementById("todoinput");
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 
-btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
-    alert("Clicked");
+btn.addEventListener("click", function () {
+    alert(input.value);
+    input.value = "";
 });
 // Type assertion.
 // If for whatever reason we want to force a type onto a variable we can do the following:

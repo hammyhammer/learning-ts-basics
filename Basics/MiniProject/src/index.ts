@@ -1,11 +1,17 @@
 // The ! at the end is telling TS to stop worrying, it is not null. 
-const btn = document.getElementById("btn")!
+
+// We can assert types with the DOM to be explicit and not hav eTS to worry
+const btn = document.getElementById("btn")! as HTMLButtonElement
+const input = document.getElementById("todoinput")! as HTMLInputElement
+
 
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 
-btn?.addEventListener("click", function () {
-  alert("Clicked")
+btn.addEventListener("click", function () {
+  alert(input.value)
+  input.value = ""
 });
+
 
 // Type assertion.
 // If for whatever reason we want to force a type onto a variable we can do the following:
