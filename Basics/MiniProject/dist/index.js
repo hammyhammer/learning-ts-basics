@@ -8,9 +8,13 @@ const list = document.getElementById("todolist");
 function handleSubmit(event) {
     event === null || event === void 0 ? void 0 : event.preventDefault();
     const newTodoText = input.value;
-    const newLI = document.createElement("LI");
+    const newLI = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
     newLI.append(newTodoText);
+    newLI.append(checkbox);
     list === null || list === void 0 ? void 0 : list.append(newLI);
+    input.value = "";
 }
 form.addEventListener("submit", handleSubmit);
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control

@@ -9,9 +9,13 @@ const list = document.getElementById("todolist")!
 function handleSubmit(event: SubmitEvent) {
   event?.preventDefault()
   const newTodoText = input.value
-  const newLI = document.createElement("LI")
+  const newLI = document.createElement("li")
+  const checkbox = document.createElement("input")
+  checkbox.type = "checkbox"
   newLI.append(newTodoText)
+  newLI.append(checkbox)
   list?.append(newLI)
+  input.value = ""
 }
 form.addEventListener("submit", handleSubmit)
 
