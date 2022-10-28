@@ -33,16 +33,23 @@ function handleSubmit(event: SubmitEvent) {
   }
   createTodo(newTodo)
   todos.push(newTodo)
-
-  // Saving to local storage
-  localStorage.setItem("todos", JSON.stringify(todos))
+  saveTodos()
   input.value = ""
+}
+// Saving to local storage
+
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos))
 }
 
 function createTodo(todo: Todo) {
   const newLI = document.createElement("li")
   const checkbox = document.createElement("input")
   checkbox.type = "checkbox"
+  checkbox.addEventListener("change", function () {
+    todo.completed = checkbox.checked
+    saveTodos()
+  })
   newLI.append(todo.text)
   newLI.append(checkbox)
   list?.append(newLI)
