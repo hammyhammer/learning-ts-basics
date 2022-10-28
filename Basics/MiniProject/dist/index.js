@@ -5,7 +5,16 @@ const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
 const list = document.getElementById("todolist");
-const todos = [];
+// Local storage to get the items
+function readTodos() {
+    const todosJSON = localStorage.getItem("todos");
+    if (todosJSON === null)
+        return [];
+    return JSON.parse(todosJSON);
+}
+const todos = readTodos();
+// Local storage to display our todos
+todos.forEach(createTodo);
 function handleSubmit(event) {
     event === null || event === void 0 ? void 0 : event.preventDefault();
     const newTodo = {
@@ -14,6 +23,8 @@ function handleSubmit(event) {
     };
     createTodo(newTodo);
     todos.push(newTodo);
+    // Saving to local storage
+    localStorage.setItem("todos", JSON.stringify(todos));
     input.value = "";
 }
 function createTodo(todo) {

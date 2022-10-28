@@ -6,13 +6,24 @@ const input = document.getElementById("todoinput")! as HTMLInputElement
 const form = document.querySelector("form")!
 const list = document.getElementById("todolist")!
 
+
+// Local storage to get the items
+function readTodos() {
+  const todosJSON = localStorage.getItem("todos")
+  if (todosJSON === null) return []
+  return JSON.parse(todosJSON)
+}
+
+
 // Interface example we could use
 
 interface Todo {
   text: string;
   completed: boolean;
 }
-const todos: Todo[] = []
+const todos: Todo[] = readTodos()
+// Local storage to display our todos
+todos.forEach(createTodo)
 
 function handleSubmit(event: SubmitEvent) {
   event?.preventDefault()
@@ -23,6 +34,8 @@ function handleSubmit(event: SubmitEvent) {
   createTodo(newTodo)
   todos.push(newTodo)
 
+  // Saving to local storage
+  localStorage.setItem("todos", JSON.stringify(todos))
   input.value = ""
 }
 
