@@ -5,10 +5,11 @@ const btn = document.getElementById("btn")! as HTMLButtonElement
 const input = document.getElementById("todoinput")! as HTMLInputElement
 const form = document.querySelector("form")!
 
-form.addEventListener("submit", function (event) {
+function handleSubmit(event: SubmitEvent) {
   event?.preventDefault()
   console.log('submitted')
-})
+}
+form.addEventListener("submit", handleSubmit)
 
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 

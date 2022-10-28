@@ -4,10 +4,11 @@
 const btn = document.getElementById("btn");
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form");
-form.addEventListener("submit", function (event) {
+function handleSubmit(event) {
     event === null || event === void 0 ? void 0 : event.preventDefault();
     console.log('submitted');
-});
+}
+form.addEventListener("submit", handleSubmit);
 // Without the ?, TS will yell at us saying the btn ccould be null. We get some control
 // by saying its a maybe. 
 btn.addEventListener("click", function () {
