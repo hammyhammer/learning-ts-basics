@@ -1,5 +1,8 @@
 
 class Player {
+  // Static is a way to give allow something to exist on a class rather than just 
+  // individual methods.
+  static desciption = "Player In Our Game"
   // This is a special case where JS will know that every instance of Player will
   // have this properties. We do not have to explicity call for it.
   #score = 0; // Only usable in the player class
@@ -45,6 +48,14 @@ class Player {
   }
 }
 
+// Extends allows us to utilize the same code we used for the Player class
+class AdminPlayer extends Player {
+  isAdmin = true
+}
+
+let admin = new AdminPlayer()
+console.log(admin.taunt())
+console.log(admin)
 const player1 = new Player("Snoopy", "dawg")
 player1.taunt()
 console.log(player1.first)
