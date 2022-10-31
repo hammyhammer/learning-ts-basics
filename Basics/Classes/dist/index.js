@@ -1,11 +1,20 @@
 class Player {
+  // This is a special case where JS will know that every instance of Player will
+  // have this properties. We do not have to explicity call for it.
+  score = 0;
+  numLives = 10;
   constructor(first, last) {
     this.first = first;
     this.last = last;
+    this.score = 0;
+    this.numLives = 10;
     console.log("Constructing")
   }
   taunt() {
     console.log("Get rekt")
+  }
+  loseLife() {
+    numLives--
   }
 }
 
