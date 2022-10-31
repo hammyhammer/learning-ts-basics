@@ -50,6 +50,12 @@ class Player {
 
 // Extends allows us to utilize the same code we used for the Player class
 class AdminPlayer extends Player {
+  constructor(first, last, powers) {
+    super(first, last) // references the Player class/ parent class
+    this.first = first;
+    this.last = last
+    this.powers = powers;
+  }
   isAdmin = true
 }
 
