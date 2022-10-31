@@ -18,6 +18,19 @@ class Player {
     return `${this.first} ${this.last}`
   }
 
+  // Set allows us to change different properties
+  set fullName(newName) {
+    const [first, last] = newName.split(' ')
+    this.first = first;
+    this.last = last;
+  }
+
+  set score(newScore) {
+    if (newScore < 0) {
+      throw new Error("Score must be positive")
+    }
+    this.#score = newScore
+  }
   // get score() {
   //   return this.#score
   // }
@@ -38,4 +51,5 @@ console.log(player1.first)
 console.log(player1.last)
 
 console.log(player1.fullName)
-// console.log(player1.score)
+player1.fullName = "Bobby Hill"
+console.log(player1.fullName)
