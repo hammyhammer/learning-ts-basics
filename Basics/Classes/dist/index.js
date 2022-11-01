@@ -80,3 +80,39 @@ class Jacket {
 }
 const bike1 = new Bike("red");
 const jacket1 = new Jacket("Gap", "blue");
+// Abstract classes allow us to not make anymore instances of that class. 
+// We can define methods ora pattern to use later. Basically saying something
+// must exist
+class Employee {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+    greet() {
+        console.log("Hello");
+    }
+}
+// These classes must have the getPay method because of the abstract keyword.
+// We call super to get the employee properties
+class FullTimeEmployee extends Employee {
+    constructor(first, last, salary) {
+        super(first, last);
+        this.salary = salary;
+    }
+    getPay() {
+        return this.salary;
+    }
+}
+class PartTimeEmployee extends Employee {
+    constructor(first, last, hourlyRate, hoursWorked) {
+        super(first, last);
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+    getPay() {
+        return this.hourlyRate * this.hoursWorked;
+    }
+}
+let andrew = new FullTimeEmployee("Andrew", "Anderson", 60000);
+console.log(andrew.getPay());
+let Henry = new PartTimeEmployee("Henry", "Henderson", 15, 50);
