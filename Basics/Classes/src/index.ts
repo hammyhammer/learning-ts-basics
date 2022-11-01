@@ -15,9 +15,12 @@ class Player {
   // will have different names, hence why we do not assign anything to them.
   // We could leave off the : number but it is good practice to be specific about it
 
-  // With the private keyword, it cannot be accessed outside of the class. Similar to 
-  // the JS #score. It can be used in TS but either will work. 
-  private _score: number = 0;
+  // With the private keyword, it cannot be accessed outside of the class. Similar to
+  // the JS #score. It can be used in TS but either will work.
+
+  // With protected, we can pass down private properties down to children classes.
+  // If we left it as private, it does not go down to children classes
+  protected _score: number = 0;
 
   constructor(first: string, last: string) {
     this.first = first;
@@ -41,6 +44,7 @@ class Player {
     return this._score
   }
 
+  // Setters
   // Allows us to reassign a property outside of the class
   set score(newScore: number) {
     if (newScore < 0) {
@@ -49,6 +53,19 @@ class Player {
     this._score = newScore
   }
 }
+
+
+
+
+class SuperPlayer extends Player {
+  public isAdmin: boolean = true;
+  maxScore() {
+    this._score = 999
+  }
+}
+
+
+
 
 let hill = new Player('Hank', "Hill")
 
