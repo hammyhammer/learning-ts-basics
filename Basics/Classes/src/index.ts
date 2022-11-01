@@ -88,3 +88,31 @@ class Playa {
 
 let newPlayer = new Playa("Rufus", "Smith")
 
+
+// We can use interefaces with classes to give ourselves a set of rules to follow
+// The implements keyword allows us to utilize it. 
+interface Colorful {
+  color: string
+}
+
+interface Printable {
+  print(): void
+}
+
+class Bike implements Colorful {
+  constructor(public color: string) {
+
+  }
+}
+
+class Jacket implements Colorful, Printable {
+  constructor(public brand: string, public color: string) {
+
+  }
+  print() {
+    console.log('Test')
+  }
+}
+
+const bike1 = new Bike("red")
+const jacket1 = new Jacket("Gap", "blue")

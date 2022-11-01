@@ -64,3 +64,19 @@ class Playa {
     }
 }
 let newPlayer = new Playa("Rufus", "Smith");
+class Bike {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Jacket {
+    constructor(brand, color) {
+        this.brand = brand;
+        this.color = color;
+    }
+    print() {
+        console.log('Test');
+    }
+}
+const bike1 = new Bike("red");
+const jacket1 = new Jacket("Gap", "blue");
