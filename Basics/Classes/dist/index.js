@@ -10,7 +10,7 @@ class Player {
         // We could leave off the : number but it is good practice to be specific about it
         // With the private keyword, it cannot be accessed outside of the class. Similar to 
         // the JS #score. It can be used in TS but either will work. 
-        this.score = 0;
+        this._score = 0;
         this.first = first;
         this.last = last;
         // Example of we can use private methods within the class but cannot access
@@ -21,7 +21,22 @@ class Player {
     privateMethod() {
         console.log("Secreeeeet");
     }
+    // Getters. A way to access information. Treated like a readonly
+    get fullName() {
+        return `${this.first} ${this.last}`;
+    }
+    get score() {
+        return this._score;
+    }
+    // Allows us to reassign a property outside of the class
+    set score(newScore) {
+        if (newScore < 0) {
+            throw new Error("Score cannot be negative");
+        }
+        this._score = newScore;
+    }
 }
+let hill = new Player('Hank', "Hill");
 // This is another way of doing a class in TS. It is a shorthand way.
 // Rather than putting our properties before the constructor, we can put them in
 // the parameters
