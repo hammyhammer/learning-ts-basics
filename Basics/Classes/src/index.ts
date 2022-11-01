@@ -3,8 +3,9 @@
 // the type pror to the constructor. If we do not it will yell at us. 
 
 class Player {
-  first: string;
-  last: string;
+  // Readonly allows us to never change it again. Once it is set, you cannot modify it
+  readonly first: string;
+  readonly last: string;
   // We do not have to be specific if we assign something to the variable. Score in this
   // case is hardcoded in. All players will have the same starting score, but all players
   // will have different names, hence why we do not assign anything to them.
