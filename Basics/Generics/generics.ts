@@ -83,3 +83,24 @@ function makeList<T = number>(): T[] {
 }
 // We can change it if we specify it
 const bools = makeList<boolean>()
+
+// Classes
+interface Song {
+  title: string;
+  artist: string;
+}
+interface Video {
+  title: string;
+  creator: string;
+  resolution: string;
+}
+
+class Playlist<T> {
+  public queue: T[] = [];
+  add(element: T) {
+    this.queue.push(element)
+  }
+}
+
+const songs = new Playlist<Song>()
+const videos = new Playlist<Video>()
