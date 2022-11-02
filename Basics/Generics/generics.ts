@@ -50,3 +50,19 @@ function getRandomElement<T>(list: T[]): T {
 }
 
 getRandomElement<string>(['a', 'c', 'x'])
+
+// TS can infer types. Same deal with our getRandomElement function. We do not have
+// leave a type parameter.
+
+getRandomElement(['a', 'c', 'x'])
+
+//We can avoid the any type by amking it a generic. 
+function merge<T, U>(object1: T, object2: U) {
+  return {
+    ...object1,
+    ...object2
+  }
+}
+
+
+const comboObj = merge({ name: "bob" }, { job: "software developer" })
