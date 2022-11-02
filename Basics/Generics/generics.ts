@@ -76,3 +76,10 @@ interface Lengthy {
 function printDoubleLength<T extends Lengthy>(thing: T): number {
   return thing.length * 2
 }
+
+// Default type parameters
+function makeList<T = number>(): T[] {
+  return []
+}
+// We can change it if we specify it
+const bools = makeList<boolean>()
