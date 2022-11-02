@@ -41,4 +41,12 @@ interface Cat {
   breed: string;
 }
 
-indentity < Cat > {()}
+// indentity < Cat > {()}
+
+// Generics will spit out what is provided to them when we call the function
+function getRandomElement<T>(list: T[]): T {
+  const randomIndex = Math.random() * list.length
+  return list[randomIndex]
+}
+
+getRandomElement<string>(['a', 'c', 'x'])
