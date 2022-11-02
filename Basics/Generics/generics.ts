@@ -57,7 +57,8 @@ getRandomElement<string>(['a', 'c', 'x'])
 getRandomElement(['a', 'c', 'x'])
 
 //We can avoid the any type by amking it a generic. 
-function merge<T, U>(object1: T, object2: U) {
+// Extends keyword is saying they have to be object (Or whatever we want).
+function merge<T extends object, U extends object>(object1: T, object2: U) {
   return {
     ...object1,
     ...object2
@@ -66,3 +67,12 @@ function merge<T, U>(object1: T, object2: U) {
 
 
 const comboObj = merge({ name: "bob" }, { job: "software developer" })
+
+
+interface Lengthy {
+  length: number
+}
+
+function printDoubleLength<T extends Lengthy>(thing: T): number {
+  return thing.length * 2
+}
