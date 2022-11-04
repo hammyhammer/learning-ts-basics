@@ -66,15 +66,16 @@ function isCat(animal: Cat | Dog): animal is Cat {
   return (animal as Cat).numLives !== undefined
 }
 
-function makeNoise(animal: Cat | Dog): string {
-  if (isCat(animal)) {
-    animal
-    return 'Meow'
-  } else {
-    animal
-  }
+// Error 
+// function makeNoise(animal: Cat | Dog): string {
+//   if (isCat(animal)) {
+//     animal
+//     return 'Meow'
+//   } else {
+//     animal
+//   }
 
-}
+// }
 
 // Discriminate Unions
 
@@ -102,7 +103,14 @@ interface Pig {
   kind: "pig";
 }
 
-type FarmAnimal = Rooster | Pig | Cow
+interface Sheep {
+  name: string;
+  weight: number;
+  age: number;
+  kind: "sheep";
+}
+
+type FarmAnimal = Rooster | Pig | Cow | Sheep
 
 
 function getFarmAnimalSound(animal: FarmAnimal) {
@@ -112,6 +120,15 @@ function getFarmAnimalSound(animal: FarmAnimal) {
     case ("cow"):
       return "Moo";
     case ("rooster"):
-      return "AHHHHHHH"
+      return "AHHHHHHH";
+    case ("sheep"):
+      return "Baaaa"
+    // Exhausted Method
+    default:
+      // We should never make it here, if everything was handled correctly.
+      // 
+      const exhaustiveCheck: never = animal
+      return exhaustiveCheck
   }
 }
+
