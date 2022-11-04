@@ -51,13 +51,13 @@ function printName(entity: User | Company) {
 // Type Predicates
 
 interface Cat {
-  name: string,
-  numLives: number
+  name: string;
+  numLives: number;
 }
 
 interface Dog {
   name: string;
-  breed: string
+  breed: string;
 }
 
 
@@ -76,3 +76,42 @@ function makeNoise(animal: Cat | Dog): string {
 
 }
 
+// Discriminate Unions
+
+// Our interfaces have the same properties. There is no way to tell
+// which is which. Until we add the kind property. We can call is whatever,
+// does not have to be kind (TYPE, type, etc) as long it is consistent
+interface Rooster {
+  name: string;
+  weight: number
+  age: number;
+  kind: "rooster"
+}
+
+interface Cow {
+  name: string;
+  weight: number;
+  age: number;
+  kind: "cow"
+}
+
+interface Pig {
+  name: string;
+  weight: number;
+  age: number;
+  kind: "pig";
+}
+
+type FarmAnimal = Rooster | Pig | Cow
+
+
+function getFarmAnimalSound(animal: FarmAnimal) {
+  switch (animal.kind) {
+    case ("pig"):
+      return "Oink";
+    case ("cow"):
+      return "Moo";
+    case ("rooster"):
+      return "AHHHHHHH"
+  }
+}
