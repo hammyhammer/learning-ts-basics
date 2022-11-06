@@ -5,6 +5,7 @@ import axios from "axios";
 axios.get("http://jsonplaceholder.typicode.com/users/1")
   .then((res) => {
     console.log('Success')
+    console.log(res.data.name)
   })
   .catch((event) => {
     console.log('Error', event)

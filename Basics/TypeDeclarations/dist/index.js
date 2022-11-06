@@ -9,6 +9,7 @@ const axios_1 = __importDefault(require("axios"));
 axios_1.default.get("http://jsonplaceholder.typicode.com/users/1")
     .then((res) => {
     console.log('Success');
+    console.log(res.data.name);
 })
     .catch((event) => {
     console.log('Error', event);
