@@ -6,4 +6,6 @@ To Set it all up
   - Tsc to create it
 
 2) We run npm to get our axios
+  - npm init -y (For package.json)
   - npm install axios
+  -run tsc -w
