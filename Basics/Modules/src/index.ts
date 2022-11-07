@@ -2,5 +2,6 @@
 
 // If we export on a ts file, we need to do the following below.
 // ** JS instead of TS **
-import { add, sample } from "./utils.js"
+import { add, sample, pi } from "./utils.js"
+import User from './user.js'
 add(1, 3)
