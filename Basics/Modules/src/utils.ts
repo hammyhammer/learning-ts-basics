@@ -1,4 +1,7 @@
-function add(x: number, y: number) {
+// putting in export of wait, it is considered a module. TS will yell at us
+// if we do. 
+
+export function add(x: number, y: number) {
   return x + y
 }
 
