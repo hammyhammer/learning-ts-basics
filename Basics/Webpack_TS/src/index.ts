@@ -1,6 +1,6 @@
-import Dog from "./dog.js";
-import ShelterDog from "./shelterdog.js";
-import { add, multiply, divide } from "./utils.js";
+import Dog from "./dog";
+import ShelterDog from "./shelterdog";
+import { add, multiply, divide } from "./utils";
 
 const brandy = new Dog("Brandy", "Spaniel", 10);
 brandy.bark()
