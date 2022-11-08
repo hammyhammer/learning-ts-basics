@@ -1,6 +1,8 @@
 const path = require("path")
 
 module.exports = {
+  // We can switch between development and production
+  mode: "development",
   // entry telling TS where to start bundling. The entry can be relative
   entry: "./src/index.ts",
 
@@ -24,5 +26,6 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/dist"
   },
 }
